@@ -19,3 +19,8 @@ But to use it in production it would need more tests and discussion with product
 ### Image queue size
 I try to keep less than 30 images in memory. This number works well on my machine - it might be changed for target environment.
 For same reasons I try to download 20 images at a time. Again - it's a number likely to be changed.
+
+### Single core
+I found very hard to test the code on single CPU core. There is literally no way how to assure that command will run 
+on single CPU core on Mac OS X. 
+See https://apple.stackexchange.com/questions/166870/processor-affinity-on-mac
