@@ -12,8 +12,8 @@ import java.util.stream.Collectors;
 public class Analyzer extends Thread {
     private List<Image> queue;
     public static Boolean RUN = true;
-    //Switch to StrictColorCounter for 100% accurate but slower version.
-    private IColorCounter counter = new FastColorCounter();
+    //Switch to FastColorCounter for faster version.
+    private IColorCounter counter = new StrictColorCounter();
     private PrintWriter output;
     public Integer total = 0;
 
