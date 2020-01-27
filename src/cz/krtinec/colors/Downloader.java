@@ -14,6 +14,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Downloader extends Thread {
+    private static final int MAX_QUEUE_SIZE = 30;
     private BufferedReader input;
     private PrintWriter error;
     private List<Image> queue;
@@ -62,7 +63,7 @@ public class Downloader extends Thread {
             }
 
             //wait for all files to be downloaded and for Analyzer to catch up
-            while (queue.size() > 30 || futures.stream().anyMatch(i -> !i.isDone())) {
+            while (queue.size() > MAX_QUEUE_SIZE || futures.stream().anyMatch(i -> !i.isDone())) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
