@@ -1,0 +1,5 @@
+*.iml
+.idea
+out
+resources/output.txt
+resources/error.txt

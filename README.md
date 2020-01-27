@@ -1,0 +1,1 @@
+# Prevalent colors analyzer
